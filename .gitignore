@@ -31,3 +31,12 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+# OS X
+*.DS_Store
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
