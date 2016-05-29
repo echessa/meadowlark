@@ -1,3 +1,11 @@
+var fortunes = [
+"Conquer your fears or they will conquer you.",
+"Rivers need springs.",
+"Do not fear what you don't know.",
+"You will have a pleasant surprise.",
+"Whenever possible, keep it simple.",
+];
+
 var express = require('express');
 
 var app = express();
@@ -17,7 +25,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function(req, res) {
-    res.render('about');
+    var randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+    res.render('about', { fortune: randomFortune });
 });
 
 // 404 catch-all handler (middleware)
