@@ -41,12 +41,17 @@ app.get('/tours/request-group-rate', function(req, res) {
 });
 
 // 404 catch-all handler (middleware)
+// this should appear AFTER all of your routes
 app.use(function(req, res, next) {
     res.status(404);
     res.render('404');
 });
 
 // 500 error handler (middleware)
+// this should appear AFTER all of your routes
+// note that even if you don't need the "next"
+// function, it must be included for Express
+// to recognize this as an error handler
 app.use(function(err, req, res, next) {
     console.error(err.stack);
     res.status(500);
